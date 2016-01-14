@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="vendor/autoload.php"
+>
+    <php>
+        <ini name="date.timezone" value="UTC" />
+        <ini name="display_errors" value="On" />
+        <ini name="display_startup_errors" value="On" />
+        <ini name="error_reporting" value="E_ALL" />
+
+        <env name="SCHEDULEE_CONCUR_QUEUE_SIZE" value="100" />
+
+        <env name="SCHEDULEE_PERF_QUEUE_SIZE" value="1000" />
+        <env name="SCHEDULEE_PERF_ITEM_LENGTH" value="128" />
+    </php>
+
+    <testsuites>
+        <testsuite name="Schedulee Queue Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <group>concurrency</group>
+            <group>performance</group>
+        </exclude>
+    </groups>
+
+    <filter>
+        <whitelist>
+            <directory>src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

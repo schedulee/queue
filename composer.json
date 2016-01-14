@@ -1,0 +1,35 @@
+{
+    "name": "schedulee/queue",
+    "description": "$queue->push('I can be popped off after', '10 minutes');",
+    "keywords": ["queue", "schedule", "priority", "delayed", "worker", "job", "task"],
+    "homepage": "https://github.com/schedulee/queue",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eugene Leonovich",
+            "email": "gen.work@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.4|^7.0"
+    },
+    "suggest": {
+        "schedulee/queue-mongo": "",
+        "schedulee/queue-redis": "",
+        "schedulee/queue-tarantool": "",
+        "schedulee/queue-pdo": "",
+        "schedulee/queue-sysv": "",
+        "schedulee/queue-beanstalk": ""
+    },
+    "autoload": {
+        "psr-4": {
+            "Schedulee\\Queue\\": "src/"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4": {
+            "Schedulee\\Tests\\Queue\\": "tests/"
+        }
+    }
+}
